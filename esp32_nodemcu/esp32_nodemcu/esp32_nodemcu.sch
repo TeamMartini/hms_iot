@@ -1,0 +1,111 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:LED D1
+U 1 1 6087C40F
+P 3050 2450
+F 0 "D1" H 3043 2667 50  0000 C CNN
+F 1 "LED" H 3043 2576 50  0000 C CNN
+F 2 "LED_THT:LED_D3.0mm" H 3050 2450 50  0001 C CNN
+F 3 "~" H 3050 2450 50  0001 C CNN
+	1    3050 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 6087C95C
+P 3600 2450
+F 0 "R1" V 3393 2450 50  0000 C CNN
+F 1 "R" V 3484 2450 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3530 2450 50  0001 C CNN
+F 3 "~" H 3600 2450 50  0001 C CNN
+	1    3600 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 6087DB88
+P 2700 2700
+F 0 "#PWR01" H 2700 2450 50  0001 C CNN
+F 1 "GND" H 2705 2527 50  0000 C CNN
+F 2 "" H 2700 2700 50  0001 C CNN
+F 3 "" H 2700 2700 50  0001 C CNN
+	1    2700 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR04
+U 1 1 6087E174
+P 4000 2200
+F 0 "#PWR04" H 4000 2050 50  0001 C CNN
+F 1 "+5V" H 4015 2373 50  0000 C CNN
+F 2 "" H 4000 2200 50  0001 C CNN
+F 3 "" H 4000 2200 50  0001 C CNN
+	1    4000 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 2200 4000 2450
+Wire Wire Line
+	3750 2450 4000 2450
+Wire Wire Line
+	3200 2450 3450 2450
+Wire Wire Line
+	2700 2450 2900 2450
+Wire Wire Line
+	2700 2450 2700 2700
+$Comp
+L Connector:Conn_01x02_Female J1
+U 1 1 6087FCFA
+P 4250 2950
+F 0 "J1" H 4278 2926 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 4278 2835 50  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 4250 2950 50  0001 C CNN
+F 3 "~" H 4250 2950 50  0001 C CNN
+	1    4250 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR02
+U 1 1 6088086A
+P 3850 2850
+F 0 "#PWR02" H 3850 2700 50  0001 C CNN
+F 1 "+5V" H 3865 3023 50  0000 C CNN
+F 2 "" H 3850 2850 50  0001 C CNN
+F 3 "" H 3850 2850 50  0001 C CNN
+	1    3850 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 60880F82
+P 3850 3150
+F 0 "#PWR03" H 3850 2900 50  0001 C CNN
+F 1 "GND" H 3855 2977 50  0000 C CNN
+F 2 "" H 3850 3150 50  0001 C CNN
+F 3 "" H 3850 3150 50  0001 C CNN
+	1    3850 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 2850 3850 2950
+Wire Wire Line
+	3850 2950 4050 2950
+Wire Wire Line
+	3850 3150 3850 3050
+Wire Wire Line
+	3850 3050 4050 3050
+$EndSCHEMATC

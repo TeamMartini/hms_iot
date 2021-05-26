@@ -11,7 +11,7 @@
 #define H (HEIGHT / BLOCK_SIZE)
 #define BLOCK_DIFF_THRESHOLD 0.2
 #define IMAGE_DIFF_THRESHOLD 0.1
-#define DEBUG 1
+#define DEBUG 0
 
 
 uint16_t prev_frame[H][W] = { 0 };

@@ -1,1 +1,0 @@
-[{"id":"b1edd3d4.c0ded","type":"mongodb out","z":"d810a2b.d53536","mongodb":"538cfd54.87c1a4","name":"","collection":"schemas","payonly":false,"upsert":false,"multi":false,"operation":"store","x":1090,"y":320,"wires":[]},{"id":"538cfd54.87c1a4","type":"mongodb","hostname":"127.0.0.1","topology":"direct","connectOptions":"","port":"27017","db":"iot_database","name":""}]

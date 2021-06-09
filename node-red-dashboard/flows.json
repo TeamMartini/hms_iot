@@ -1,0 +1,833 @@
+[
+    {
+        "id": "d810a2b.d53536",
+        "type": "tab",
+        "label": "플로우 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f9f31448.a91a98",
+        "type": "mqtt-broker",
+        "name": "mqtt_broker",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "5",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "2f363f54.ca58c",
+        "type": "ui_group",
+        "name": "Devices",
+        "tab": "dc6c0f98.129f9",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "dc6c0f98.129f9",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1769ab9.1562e54",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "538cfd54.87c1a4",
+        "type": "mongodb",
+        "hostname": "nw.esllo.com",
+        "topology": "direct",
+        "connectOptions": "authSource=hms&readPreference=primary",
+        "port": "27017",
+        "db": "test",
+        "name": ""
+    },
+    {
+        "id": "294b40ee.d6942",
+        "type": "ui_group",
+        "name": "Room_all",
+        "tab": "dc6c0f98.129f9",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2e39708f.acb6c",
+        "type": "ui_group",
+        "name": "Room_esp_up",
+        "tab": "dc6c0f98.129f9",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "59ce7217.29de6c",
+        "type": "ui_group",
+        "name": "Room_esp_down",
+        "tab": "dc6c0f98.129f9",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3ccfcc83.bc6e44",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/init",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": false,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "8761eb48.63fcd8"
+            ]
+        ]
+    },
+    {
+        "id": "8761eb48.63fcd8",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "var address = \"\"\n\nfor(var i = 0; i < msg.payload.length; i++) {\n    address += msg.payload[i].toString(16);\n}\n\n// msg.payload = address;\n\nmsg.mac_address = address.substring(0, 12);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 40,
+        "wires": [
+            [
+                "1e3af03e.f9aba"
+            ]
+        ]
+    },
+    {
+        "id": "ced8e69a.082398",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "for(let i = 0; i < msg.payload.length; i++) {\n    if(msg.payload[i].mac_address == msg.mac_address) {\n        return null;\n    }\n}\n\nvar data = {\n    mac_address : msg.mac_address\n}\n\nreturn data;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 40,
+        "wires": [
+            [
+                "b1edd3d4.c0ded"
+            ]
+        ]
+    },
+    {
+        "id": "6157c8d.9838a38",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/create_all",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": false,
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "ae059aca.8444c8"
+            ]
+        ]
+    },
+    {
+        "id": "ae059aca.8444c8",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "var address = \"\"\n\nfor(var i = 0; i < msg.payload.length; i++) {\n    address += msg.payload[i].toString(16);\n}\n\nmsg.mac_address = address.substring(0,12);\n\n// var data = {\n//     mac_address : address.substring(0,12),\n//     // count: 0\n// }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 120,
+        "wires": [
+            [
+                "b110da79.4f4b48"
+            ]
+        ]
+    },
+    {
+        "id": "764ac4a4.0dba9c",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/room_all_add",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": false,
+        "x": 170,
+        "y": 220,
+        "wires": [
+            [
+                "4f0fea05.f5e124"
+            ]
+        ]
+    },
+    {
+        "id": "4f0fea05.f5e124",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "var address = \"\"\n\nfor(var i = 0; i < msg.payload.length; i++) {\n    address += msg.payload[i].toString(16);\n}\n\nmsg.realtext = msg.payload\nmsg.context = address\n\nmsg.address = address.substring(0,12);\nmsg.count_real = parseInt(msg.realtext[8]);\n\nmsg.payload = {\n    mac_address: msg.address\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 220,
+        "wires": [
+            [
+                "578e417.b008bc"
+            ]
+        ]
+    },
+    {
+        "id": "455e7bf.0ddd084",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "if(msg == undefined) {\n    return msg\n}\nelse {\n    data = {\n    _id : msg.payload[0]._id,\n    mac_address: msg.payload[0].mac_address,\n    count: (msg.payload[0].count + 1) <=0 ? 0 : msg.payload[0].count + 1\n    }\n    return data\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 220,
+        "wires": [
+            [
+                "7549a604.19b838"
+            ]
+        ]
+    },
+    {
+        "id": "12003490.28373b",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/room_all_sub",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": false,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "22752b1b.f4f0c4"
+            ]
+        ]
+    },
+    {
+        "id": "22752b1b.f4f0c4",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "var address = \"\"\n\nfor(var i = 0; i < msg.payload.length; i++) {\n    address += msg.payload[i].toString(16);\n}\n\nmsg.realtext = msg.payload\nmsg.context = address\n\nmsg.address = address.substring(0,12);\nmsg.count_real = parseInt(msg.realtext[8]);\n\nmsg.payload = {\n    mac_address: msg.address\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "34d8620a.25f2ee"
+            ]
+        ]
+    },
+    {
+        "id": "83958b2a.edfd38",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "if(msg == undefined) {\n    return msg\n}\nelse {\n    data = {\n        _id : msg.payload[0]._id,\n        mac_address: msg.payload[0].mac_address,\n        count: (msg.payload[0].count - 1) <=0 ? 0 : msg.payload[0].count - 1\n    }\n    return data\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 300,
+        "wires": [
+            [
+                "7ff646df.9d90f8"
+            ]
+        ]
+    },
+    {
+        "id": "b1edd3d4.c0ded",
+        "type": "mongodb out",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "devices",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1130,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "baf16a82.dbfd48",
+        "type": "mongodb out",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1120,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7549a604.19b838",
+        "type": "mongodb out",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1160,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "7ff646df.9d90f8",
+        "type": "mongodb out",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "payonly": false,
+        "upsert": false,
+        "multi": false,
+        "operation": "store",
+        "x": 1160,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "578e417.b008bc",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "operation": "find",
+        "x": 640,
+        "y": 220,
+        "wires": [
+            [
+                "455e7bf.0ddd084"
+            ]
+        ]
+    },
+    {
+        "id": "34d8620a.25f2ee",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "operation": "find",
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "83958b2a.edfd38"
+            ]
+        ]
+    },
+    {
+        "id": "eaefd2e8.8e099",
+        "type": "ui_chart",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "group": "294b40ee.d6942",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "x": 870,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "385c9b4b.bd62c4",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/room_esp_up",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 170,
+        "y": 580,
+        "wires": [
+            [
+                "37c2c41b.76476c",
+                "824f87d6.b44318"
+            ]
+        ]
+    },
+    {
+        "id": "37c2c41b.76476c",
+        "type": "debug",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "824f87d6.b44318",
+        "type": "ui_text",
+        "z": "d810a2b.d53536",
+        "group": "2e39708f.acb6c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "room_esp_up",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "28e96f3b.a002b",
+        "type": "mqtt in",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "topic": "/room_esp_down",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "f9f31448.a91a98",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 180,
+        "y": 660,
+        "wires": [
+            [
+                "9216c271.cee8c",
+                "656ce5bf.c0be6c"
+            ]
+        ]
+    },
+    {
+        "id": "9216c271.cee8c",
+        "type": "debug",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "656ce5bf.c0be6c",
+        "type": "ui_text",
+        "z": "d810a2b.d53536",
+        "group": "59ce7217.29de6c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "room_esp_down",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 520,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "4a49885d.947f18",
+        "type": "ui_text",
+        "z": "d810a2b.d53536",
+        "group": "2f363f54.ca58c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "MAC_ADDRESS",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 790,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "80dcc866.b9dc98",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "find_devices",
+        "collection": "devices",
+        "operation": "find",
+        "x": 350,
+        "y": 480,
+        "wires": [
+            [
+                "205c3040.ab4a1"
+            ]
+        ]
+    },
+    {
+        "id": "205c3040.ab4a1",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "let msgg = { payload: \"\" }\n\n// msgg.payload = msg.payload[0].mac_address;\n\nfor(let i = 0; i < msg.payload.length; i++) {\n    msgg.payload += msg.payload[i].mac_address;\n    msgg.payload += \"\\n\";\n}\n\n\n// for(let i in msg.payload) {\n//     msgg.payload += i;\n//     msgg.payload += \"\\n\";\n// }\n\n\nreturn msgg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 480,
+        "wires": [
+            [
+                "4a49885d.947f18"
+            ]
+        ]
+    },
+    {
+        "id": "e5d61ce2.a6f2d",
+        "type": "inject",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "props": [],
+        "repeat": "120",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "80dcc866.b9dc98"
+            ]
+        ]
+    },
+    {
+        "id": "1e3af03e.f9aba",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "devices",
+        "operation": "find",
+        "x": 640,
+        "y": 40,
+        "wires": [
+            [
+                "ced8e69a.082398"
+            ]
+        ]
+    },
+    {
+        "id": "b110da79.4f4b48",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "operation": "find",
+        "x": 660,
+        "y": 120,
+        "wires": [
+            [
+                "380c36f5.1cd2ba"
+            ]
+        ]
+    },
+    {
+        "id": "380c36f5.1cd2ba",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "for(let i = 0; i < msg.payload.length; i++) {\n    if(msg.payload[i].mac_address == msg.mac_address) {\n        return null;\n    }\n}\n\nlet data = {\n    mac_address: msg.mac_address,\n    count: 0\n};\n\n\nreturn data;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 120,
+        "wires": [
+            [
+                "baf16a82.dbfd48"
+            ]
+        ]
+    },
+    {
+        "id": "2ea26faf.e98dc",
+        "type": "mongodb in",
+        "z": "d810a2b.d53536",
+        "mongodb": "538cfd54.87c1a4",
+        "name": "",
+        "collection": "room_all",
+        "operation": "find",
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "506085e6.053b5c"
+            ]
+        ]
+    },
+    {
+        "id": "b915cccd.31916",
+        "type": "inject",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 400,
+        "wires": [
+            [
+                "2ea26faf.e98dc"
+            ]
+        ]
+    },
+    {
+        "id": "506085e6.053b5c",
+        "type": "function",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "func": "msg.payload = msg.payload[0].count;\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 400,
+        "wires": [
+            [
+                "eaefd2e8.8e099"
+            ]
+        ]
+    },
+    {
+        "id": "de6d3117.33f91",
+        "type": "http request",
+        "z": "d810a2b.d53536",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 190,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    }
+]
